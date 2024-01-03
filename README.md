@@ -66,7 +66,7 @@ Before running TaskWeaver, you need to provide your LLM configurations. Taking O
 💡 TaskWeaver also supports other LLMs and advanced configurations, please check the [documents](https://microsoft.github.io/TaskWeaver/docs/overview) for more details. 
 
 
-#### 3. To establish a connection with TaskWeaver, input your SAP HANA Database connection details into the hana-connect.ymal and validate hana-connect.py plugin details.
+### 3. To establish a connection with TaskWeaver, input your SAP HANA Database connection details into the hana-connect.ymal and validate hana-connect.py plugin details.
 #configurations: # fill below details, please ensure SAP system and HANA DB are fully operational and connected. 
  ```
 hana_host: "xx.xx.xx.xx"
@@ -89,10 +89,13 @@ Select * from ZDEMO_S0I --Count 6K
 
 
 
-#### 4. Install chainlit package prior to triggering TaskWeaver Web UI, please refers to [web UI docs](https://microsoft.github.io/TaskWeaver/docs/usage/webui) for more details.
-Install the chainlit package by **pip install chainlit** if you don't have it in your env.
+### 4. Install chainlit package prior to triggering TaskWeaver Web UI, please refers to [web UI docs](https://microsoft.github.io/TaskWeaver/docs/usage/webui) for more details.
+Install the chainlit package by conda or .venv env
+ ```
+pip install chainlit** if you don't have it in your env.
+ ```
 
-#### 5. Start the service by running the following command.
+### 5. Start the service by running the following command.
 ```
 cd playground/UI/
 chainlit run app.py
@@ -101,7 +104,7 @@ Open the browser with http://localhost:8000 and you can start the TaskWeaver App
 
 ![image](https://github.com/amitlals/TaskWeaver-SAP-AI-AGENT/assets/37605691/b8eda88a-bf85-4011-b7b0-35213afe392d)
 
-##
+### ---
 
 ## Documentation
 
