@@ -82,8 +82,8 @@ Deployment_name: "gpt-4*"
 ![image](https://github.com/amitlals/TaskWeaver-SAP-AI-AGENT/assets/37605691/fdbf2a2b-9dba-4771-b278-6131fc048d7b)
 
  ```
-## SAP Custom Table for Products and Sales Order View 
-Select * from ZDEMO_S0I
+## SAP Custom Table for Products and Sales Order View TA ->SE16
+Select * from ZDEMO_S0I --Count 6K
  ```
 ![image](https://github.com/amitlals/TaskWeaver-SAP-AI-AGENT/assets/37605691/2c041d98-d318-47a2-b490-8eae8dd012fa)
 
