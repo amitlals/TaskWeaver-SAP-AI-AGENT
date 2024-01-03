@@ -81,6 +81,13 @@ Deployment_name: "gpt-4*"
 
 ![image](https://github.com/amitlals/TaskWeaver-SAP-AI-AGENT/assets/37605691/fdbf2a2b-9dba-4771-b278-6131fc048d7b)
 
+ ```
+## SAP Custom Table for Products and Sales Order View 
+Select * from ZDEMO_S0I
+ ```
+![image](https://github.com/amitlals/TaskWeaver-SAP-AI-AGENT/assets/37605691/2c041d98-d318-47a2-b490-8eae8dd012fa)
+
+
 
 #### 4. Install chainlit package prior to triggering TaskWeaver Web UI, please refers to [web UI docs](https://microsoft.github.io/TaskWeaver/docs/usage/webui) for more details.
 Install the chainlit package by **pip install chainlit** if you don't have it in your env.
