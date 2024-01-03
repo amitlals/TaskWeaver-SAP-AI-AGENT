@@ -1,18 +1,25 @@
 <h1 align="center">
-    <img src="./.asset/logo.color.svg" width="45" /> TaskWeaver
+    <img src="./.asset/logo.color.svg" width="45" /> TaskWeaver - AI Agent with SAP HANA DB Plugin
 </h1>
 
 A **code-first** agent framework for seamlessly planning and executing data analytics tasks. 
 This innovative framework interprets user requests through coded snippets and efficiently 
 coordinates a variety of plugins in the form of functions to execute 
-data analytics tasks.
+data analytics tasks. 
 
-# News🆕
-- 📅2024-01-01: Happy New Year 🎆 with TaskWeaver [Discord](https://discord.gg/Z56MXmZgMb).
-- 📅2023-12-21: TaskWeaver now supports a number of LLMs, such as LiteLLM, Ollama, Gemini, and QWen🎈.
-- 📅2023-12-21: TaskWeaver Website is now [available](https://microsoft.github.io/TaskWeaver/) with more documentations.
-- 📅2023-12-12: A simple UI demo is available in playground/UI folder, try it [here](https://microsoft.github.io/TaskWeaver/docs/usage/webui)!
+
+**Rationale and Prerequisites for TaskWeaver, SAP S/4HANA and HANA DB custom Plugin:**
+- [x] Using Custom **SAP HANA Plugins**: TaskWeaver should support custom plugins for doing things like getting data from SAP S/4HANA product and sales or custom tables, using specific SAP data extraction algorithms, and making the connection plugin with the ‘hdbcli’ python package deployment.
+- [x] Handling Complex Data Structures: It must handle complex data formats, like pandas DataFrame, for advanced data processing and facilitate easy data transfer between plugins.
+- [x] Stateful Execution: TaskWeaver should maintain state across conversations, processing user inputs and executing tasks in an iterative manner throughout the session.
+- [x] Data Schema Inspection and Action: Prior to executing tasks, TaskWeaver needs to inspect the data schema in the database and use this information for actions before analyzing the SAP product and sales data.
+- [x] Natural Language Responses: The system should provide user-friendly responses in natural language, summarizing execution results, such as the amount of sales order per product details.
+- [x] Dynamic Code Generation: TaskWeaver must generate code on-the-fly to meet ad-hoc user requests, including tasks not covered by existing plugins, like visualizing SAP data related to Sales and product tables.
+- [x] Incorporating Domain Knowledge: The framework should integrate domain-specific knowledge to enhance LLM's planning and tool usage, ensuring accurate and reliable results in complex domains.
+- [x] Persisting Results: It should offer a mechanism to save outcomes, such as DataFrames or images, to persistent storage, with options for business users to download these artifacts.
+
 <!-- - [2023-11-30] TaskWeaver is released on GitHub🎈.  -->
+
 
 
 ## Highlights
@@ -29,7 +36,8 @@ data analytics tasks.
 
 ## Quick Start
 
-### Installation
+
+### 1. Installation & Setup SAP S/4HA for TaskWeaver and Plugin Deployment
 TaskWeaver requires **Python >= 3.10**. It can be installed by running the following command:
 ```bash
 # [optional to create conda environment]
@@ -44,7 +52,7 @@ pip install -r requirements.txt
 ```
 
 
-### Configure the LLMs
+### 2. Configure the LLMs
 Before running TaskWeaver, you need to provide your LLM configurations. Taking OpenAI as an example, you can configure `taskweaver_config.json` file as follows. 
 
 #### OpenAI
@@ -57,43 +65,48 @@ Before running TaskWeaver, you need to provide your LLM configurations. Taking O
 
 💡 TaskWeaver also supports other LLMs and advanced configurations, please check the [documents](https://microsoft.github.io/TaskWeaver/docs/overview) for more details. 
 
-### Start TaskWeaver
 
-#### 1. Command Line Interaction
-```bash
-# assume you are in the cloned TaskWeaver folder
-python -m taskweaver -p ./project/
-```
-This will start the TaskWeaver process and you can interact with it through the command line interface. 
-If everything goes well, you will see the following prompt:
-
-```
-=========================================================
- _____         _     _       __
-|_   _|_ _ ___| | _ | |     / /__  ____ __   _____  _____
-  | |/ _` / __| |/ /| | /| / / _ \/ __ `/ | / / _ \/ ___/
-  | | (_| \__ \   < | |/ |/ /  __/ /_/ /| |/ /  __/ /
-  |_|\__,_|___/_|\_\|__/|__/\___/\__,_/ |___/\___/_/
-=========================================================
-TaskWeaver: I am TaskWeaver, an AI assistant. To get started, could you please enter your request?
-Human: ___
+#### 3. To establish a connection with TaskWeaver, input your SAP HANA Database connection details into the hana-connect.ymal and validate hana-connect.py plugin details.
+#configurations: # fill below details, please ensure SAP system and HANA DB are fully operational and connected. 
+ ```
+hana_host: "xx.xx.xx.xx"
+hana_port: "30xx"
+hana_user: "xxx"
+hana_password: "xxx"
+api_type: openai
+api_base: https://api.openai.com
+api_key: ""
+Deployment_name: "gpt-4*"
 ```
 
-#### 2. Web UI 
-TaskWeaver also supports WebUI for demo purpose, please refers to [web UI docs](https://microsoft.github.io/TaskWeaver/docs/usage/webui) for more details.
+![image](https://github.com/amitlals/TaskWeaver-SAP-AI-AGENT/assets/37605691/fdbf2a2b-9dba-4771-b278-6131fc048d7b)
 
-#### 3. Import as a Library
-TaskWeaver can be imported as a library to integrate with your existing project, more information can be found in [docs](https://microsoft.github.io/TaskWeaver/docs/usage/library)
+
+#### 4. Install chainlit package prior to triggering TaskWeaver Web UI, please refers to [web UI docs](https://microsoft.github.io/TaskWeaver/docs/usage/webui) for more details.
+Install the chainlit package by **pip install chainlit** if you don't have it in your env.
+
+#### 5. Start the service by running the following command.
+```
+cd playground/UI/
+chainlit run app.py
+```
+Open the browser with http://localhost:8000 and you can start the TaskWeaver App connected with SAP 
+
+![image](https://github.com/amitlals/TaskWeaver-SAP-AI-AGENT/assets/37605691/b8eda88a-bf85-4011-b7b0-35213afe392d)
+
+##
 
 ## Documentation
+
 More documentations can be found on [TaskWeaver Website](https://microsoft.github.io/TaskWeaver).
 
+
+> 💡 If you have any feedback or issues, please don't hesitate to contact Amit Lal https://www.linkedin.com/in/amitlal/ 
 
 
 ---
 
-
-## Demo Examples
+## Other Demo Examples
 
 The demos were made based on the [web UI](https://microsoft.github.io/TaskWeaver/docs/usage/webui), which is better for displaying the generated artifacts such as images. 
 The demos could also be conducted in the command line interface. 
@@ -122,16 +135,7 @@ pip install langchain
 pip install tabulate
 ```
 
-#### Example 2: Forecast QQQ's price in the next 7 days
-In this example, we will show you how to use TaskWeaver to forecast QQQ's price in the next 7 days. 
 
-[Nasdaq 100 Index Price Forecasting](https://github.com/microsoft/TaskWeaver/assets/7489260/1361ed83-16c3-4056-98fc-e0496ecab015)
-
-If you want to follow this example, you need to you have two requirements installed:
-```bash
-pip install yfinance
-pip install statsmodels
-```
 
 For more examples, please refer to our [paper](http://export.arxiv.org/abs/2311.17541). 
 
