@@ -177,3 +177,8 @@ Any use of third-party trademarks or logos are subject to those third-party's po
 
 > 💡Disclaimer: Before adopting any connection plugin for SAP HANA DB, please review your SAP HANA DB licensing details carefully. Additionally, all SAP-related keywords, logos, and trademarks are the property of SAP SE. 
 Their use in this context does not imply any affiliation with or endorsement by SAP SE.
+
+## Teaser images
+![tableformat png](https://github.com/amitlals/TaskWeaver-SAP-AI-AGENT/assets/37605691/a5dd9c8a-4ab1-4fa8-b24b-ba6a5fee2850)
+
+
