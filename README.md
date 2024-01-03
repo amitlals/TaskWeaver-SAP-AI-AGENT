@@ -92,7 +92,7 @@ Select * from ZDEMO_S0I --Count 6K
 ### 4. Install chainlit package prior to triggering TaskWeaver Web UI, please refers to [web UI docs](https://microsoft.github.io/TaskWeaver/docs/usage/webui) for more details.
 Install the chainlit package by conda or .venv env
  ```
-pip install chainlit** if you don't have it in your env.
+pip install chainlit   ##if you don't have it in your env.##
  ```
 
 ### 5. Start the service by running the following command.
