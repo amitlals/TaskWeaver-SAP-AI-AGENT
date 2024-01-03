@@ -164,3 +164,6 @@ trademarks or logos is subject to and must follow
 [Microsoft's Trademark & Brand Guidelines](https://www.microsoft.com/en-us/legal/intellectualproperty/trademarks/usage/general).
 Use of Microsoft trademarks or logos in modified versions of this project must not cause confusion or imply Microsoft sponsorship.
 Any use of third-party trademarks or logos are subject to those third-party's policies.
+
+> 💡Disclaimer: Before adopting any connection plugin for SAP HANA DB, please review your SAP HANA DB licensing details carefully. Additionally, all SAP-related keywords, logos, and trademarks are the property of SAP SE. 
+Their use in this context does not imply any affiliation with or endorsement by SAP SE.
