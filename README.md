@@ -155,9 +155,10 @@ For more examples, please refer to our [paper](http://export.arxiv.org/abs/2311.
 
 
 ## Citation
+
 Our paper could be found [here](http://export.arxiv.org/abs/2311.17541). 
 If you use TaskWeaver in your research, please cite our paper:
-```
+```bibtex
 @article{taskweaver,
   title={TaskWeaver: A Code-First Agent Framework},
   author={Bo Qiao, Liqun Li, Xu Zhang, Shilin He, Yu Kang, Chaoyun Zhang, Fangkai Yang, Hang Dong, Jue Zhang, Lu Wang, Minghua Ma, Pu Zhao, Si Qin, Xiaoting Qin, Chao Du, Yong Xu, Qingwei Lin, Saravan Rajmohan, Dongmei Zhang},
@@ -165,6 +166,26 @@ If you use TaskWeaver in your research, please cite our paper:
   year={2023}
 }
 ```
+
+If you use the SAP on Azure extension in this repository, please also cite:
+```bibtex
+@article{lal2025aiagents,
+  title={A Survey of AI Agent Architectures in Enterprise SAP Ecosystems},
+  author={Lal, Amit},
+  year={2025},
+  publisher={TechRxiv},
+  note={Preprint}
+}
+```
+```bibtex
+@book{lal2024ai2040,
+  title={AI in 2040},
+  author={Lal, Amit},
+  year={2024},
+  isbn={9798346459941}
+}
+```
+
 
 
 ## Trademarks
@@ -180,5 +201,6 @@ Their use in this context does not imply any affiliation with or endorsement by 
 
 ## Teaser images
 ![tableformat png](https://github.com/amitlals/TaskWeaver-SAP-AI-AGENT/assets/37605691/a5dd9c8a-4ab1-4fa8-b24b-ba6a5fee2850)
+
 
 
